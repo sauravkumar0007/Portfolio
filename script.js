@@ -34,3 +34,11 @@ window.addEventListener('resize', setMenuDisplay);
 
 // Initialize menu on page load
 window.addEventListener('DOMContentLoaded', setMenuDisplay);
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+
+
